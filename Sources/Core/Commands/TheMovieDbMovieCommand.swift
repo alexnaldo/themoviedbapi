@@ -151,11 +151,11 @@ public extension TheMovieDbCommands {
         return TheMovieDbCommand(commandRoute:"/\(type)/\(id)", api: self.api!)
     }
     
-    public func tv(option: TheMovieDbTvOption)-> TheMovieDbCommand {
-        return TheMovieDbCommand(commandRoute:"/tv/\(option)", api: self.api!)
+    public func tv(option: TheMovieDbTvOption)-> TheMovieDbListCommand {
+        return TheMovieDbListCommand(commandRoute:"/tv/\(option)", api: self.api!)
     }
     
-    public func movie(option: TheMovieDbMovieOption)-> TheMovieDbCommand {
-        return TheMovieDbCommand(commandRoute:"/movie/\(option)", api: self.api!)
+    public func movie(option: TheMovieDbMovieOption)-> TheMovieDbListCommand {
+        return TheMovieDbListCommand(commandRoute:"/movie/\(option)", api: self.api!)
     }
 }
