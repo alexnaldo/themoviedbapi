@@ -121,6 +121,22 @@ public enum TheMovieDbAppendToResponseMovie : String   {
     case ratings
 }
 
+public enum TheMovieDbTvOption: String {
+    case latest
+    case on_the_air
+    case airing_today
+    case top_rated
+    case popular
+}
+
+public enum TheMovieDbMovieOption: String {
+    case latest
+    case now_playing
+    case popular
+    case top_rated
+    case upcoming
+}
+
 public extension TheMovieDbCommands {
     
     public func tv(id: Int)-> TheMovieDbCommand {
@@ -133,5 +149,13 @@ public extension TheMovieDbCommands {
     
     public func detail(type: TheMovieDbType, id: Int)-> TheMovieDbCommand {
         return TheMovieDbCommand(commandRoute:"/\(type)/\(id)", api: self.api!)
+    }
+    
+    public func tv(option: TheMovieDbTvOption)-> TheMovieDbCommand {
+        return TheMovieDbCommand(commandRoute:"/tv/\(option)", api: self.api!)
+    }
+    
+    public func movie(option: TheMovieDbMovieOption)-> TheMovieDbCommand {
+        return TheMovieDbCommand(commandRoute:"/movie/\(option)", api: self.api!)
     }
 }
