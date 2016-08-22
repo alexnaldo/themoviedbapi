@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-typealias TheMovieDbDiscoverListModel = TheMovieDbListModel<TheMovieDbDiscoverModel>
+public typealias TheMovieDbDiscoverListModel = TheMovieDbListModel<TheMovieDbDiscoverModel>
 
 public class TheMovieDbDiscoverModel: TheMovieDbModel {
     
